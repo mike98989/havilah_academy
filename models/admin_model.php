@@ -91,94 +91,9 @@ class admin_Model extends Model {
         return $msg;
         }    
     }
-    
-    /////EDUCATION ROLE
-    function fetch_edu_role($json){    
-    $edu_role = $this->db->query("SELECT * FROM educational_role WHERE status!=0")or die(mysql_error());
-    $msg['status'] = "1";   
-    $msg['data'] = $edu_role->rows;
-        if($json==true){
-        $return = $this->returnjson($msg);
-        print_r($return);
-        exit;
-        }else{
-        return $edu_role->rows;
-        }    
-    }
-    
-    
-    ///////GETTING GROUP USERS
-    function get_group_users($group_id,$json){    
-    //$users = $this->db->query("SELECT * FROM group_users WHERE group_id='".$group_id."' AND status!=0")or die(mysql_error());
-    $users = $this->db->query("SELECT group_users.*,users.first_name,users.last_name,users.email,users.image FROM group_users INNER JOIN users ON users.id=group_users.user_id WHERE group_users.group_id='".$group_id."' AND group_users.status!=0")or die(mysql_error());
         
-        //print_r($songs);
-    $msg['status'] = "1";   
-    $msg['data'] = $users->rows;
     
-        if($json==true){
-        $return = $this->returnjson($msg);
-        print_r($return);
-        exit;
-        }else{
-        return $users->rows;
-        }    
-    }
 
-    function save_sms_messages($json){
-    
-    $obj = json_decode($_POST['smsMessages']); 
-        
-    for($a=0;$a<count($obj);$a++){
-    $body=str_replace("'","''",$obj[$a]->body);      
-    //$objvalue = json_decode($obj[$a]); 
-    //$insert=$this->db->query("INSERT INTO `group_users` (group_id,user_id,status) VALUES('".$groupID."', '".$userID."','1')");   
-    $check_first = $this->db->query("SELECT msg_id FROM sms_messages WHERE msg_id ='".$obj[$a]->_id."'");
-    if($check_first->num_rows==0){  
-    $query = $this->db->query("INSERT INTO `sms_messages` (msg_id,address,body,received_date,sent_date,thread_id) VALUES ('".$obj[$a]->_id."','".$obj[$a]->address."','".$body."','".$obj[$a]->date_sent."','".$obj[$a]->date."','".$obj[$a]->thread_id."')")or die(mysql_error());   
-    }
-    }
-    
-    $msg['status']='1';
-
-    if($json==true){
-    $return = $this->returnjson($msg);
-    print_r($return);
-    exit;
-    }else{
-    return $users->rows;
-    }  
-        
-    //print_r(json_encode('got here'));exit;
-    }
-    
-    
-        ///////GETTING USER GROUPS
-    function get_sms_messages($json){
-    $json=file_get_contents('php://input');
-    $obj=json_decode($json,true); 
-    $user_token = $obj['user_token']; 
-    $query_token_first = $this->initial_query($user_token); 
-
-    if($query_token_first['num_row']=="1"){     
-    $sms = $this->db->query("SELECT * FROM sms_messages ORDER BY id DESC")or die(mysql_error());
-        //print_r($songs);
-    $msg['status'] = "1";   
-    $msg['data'] = $sms->rows;
-    }else{
-    $msg['status'] = "0";   
-    $msg['data'] = "";
-    }
-    if($json==true){
-    $return = $this->returnjson($msg);
-    print_r($return);
-    exit;
-    }else{
-    return $sms->rows;
-    }    
-        
-    }
-    
     
     ///////GETTING USER GROUPS
     function get_groups($json){
