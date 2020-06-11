@@ -1,7 +1,7 @@
 
 <body class="bg-gradient-primary">
 
-    <div class="container"  ng-controller="loginController">
+    <div class="container"  ng-controller="registerController">
   
       <div class="card o-hidden border-0 shadow-lg my-5">
         <div class="card-body p-0">
@@ -16,43 +16,45 @@
                   <h1 class="h4 text-gray-900 mb-4">Create Account<br/>
                 </h1>
                 </div>
-                <form class="user">
+                <div class="result alert alert-info" style="display:none"></div>
+                <form class="user" id="registrationForm" ng-submit="submit_registration()">
                   <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
-                      <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name">
+                      <input type="text" required class="first_name form-control form-control-user" id="exampleFirstName" name="first_name" placeholder="First Name">
                     </div>
                     <div class="col-sm-6">
-                      <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name">
+                      <input type="text" required class="last_name form-control form-control-user" id="exampleLastName" name="last_name" placeholder="Last Name">
                     </div>
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address">
+                    <input type="email" required class="email form-control form-control-user" id="exampleInputEmail" name="email" placeholder="Email Address">
                   </div>
                   <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                      <input type="password" required class="password form-control form-control-user" id="exampleInputPassword" name="password" placeholder="Password">
                     </div>
                     <div class="col-sm-6">
-                      <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password">
+                      <input type="password" required class="confirm_password form-control form-control-user" id="exampleRepeatPassword" name="confirm_password" placeholder="Repeat Password">
                     </div>
                   </div>
-                  <a href="login.html" class="btn btn-primary btn-user btn-block">
+                  <button class="btn btn-primary btn-user btn-block">
+                  <img src="{{dirlocation}}public/images/spinner2.gif" class="loader" style="width:30px;display:none">
                     Register Account
-                  </a>
-                  <hr>
-                  <a href="index.html" class="btn btn-google btn-user btn-block">
+                  </button>
+                  <hr style="display:none">
+                  <a href="index.html" class="btn btn-google btn-user btn-block" style="display:none">
                     <i class="fab fa-google fa-fw"></i> Register with Google
                   </a>
-                  <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                  <a href="index.html" class="btn btn-facebook btn-user btn-block" style="display:none">
                     <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
                   </a>
                 </form>
                 <hr>
                 <div class="text-center">
-                  <a class="small" href="forgot-password.html">Forgot Password?</a>
+                  <a class="small" href="#">Forgot Password?</a>
                 </div>
                 <div class="text-center">
-                  <a class="small" href="login.html">Already have an account? Login!</a>
+                  <a class="small" href="{{dirlocation}}userlogin">Already have an account? Login!</a>
                 </div>
               </div>
             </div>

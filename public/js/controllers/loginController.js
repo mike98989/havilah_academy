@@ -11,10 +11,10 @@
     $scope.pageSize = 30;
     
 
-    $scope.admin_login = function(){
+    $scope.user_login = function(){
     $('.loader').show();    
     $('.result').hide();
-    var formData = new FormData($('#admin_login')[0]);
+    var formData = new FormData($('#user_login')[0]);
     $.ajax({
          url: datagrab.completeUrlLocation+'api/user_login',
          type: 'POST',

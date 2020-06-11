@@ -19,7 +19,7 @@ class Index extends Controller {
 	}
     function index() {
         $message='';
-        $this->view->js = array('public/js/controllers/loginController.js');
+        $this->view->js = array('public/js/controllers/registerController.js');
         $this->view->render('index/register', $noinclude=true, $message);
     }
     

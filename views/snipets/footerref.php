@@ -9,7 +9,7 @@
 <script src="<?php echo URL;?>public/css/bootstrap4/bootstrap.min.js"></script>
 <script src="<?php echo URL;?>public/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
 <script src="<?php echo URL;?>public/plugins/easing/easing.js"></script>
-<script src="<?php echo URL;?>public/js/custom.js"></script>
+
 
   <!---LIBRARIES-->
 <script src="<?php echo URL;?>public/js/angular/angular.js"></script>
@@ -17,7 +17,7 @@
 <script src="<?php echo URL;?>public/js/dirPagination.js"></script>
 <script src="<?php echo URL;?>public/js/angular/angular-sanitize.js"></script>
 <script src="<?php echo URL;?>public/js/angular/angular-cookies.js"></script>
-
+<script src="<?php echo URL;?>public/js/angular/ngStorage.min.js"></script>
 <!---MODULE-->
 <script src="<?php echo URL;?>public/js/controllers/module.js"></script>
 <!--INJECTED INTERNAL CONTROLLERS-->
