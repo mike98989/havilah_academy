@@ -20,7 +20,7 @@
                     
                   </div>
 
-                  <form class="user" ng-submit="admin_login()" id="admin_login">
+                  <form class="user" ng-submit="user_login()" id="user_login">
                   <div class="result" style="display:none;text-align:center"></div>
                     <div class="form-group">
                       <input type="email" name="username" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Username">
@@ -28,21 +28,19 @@
                     <div class="form-group">
                       <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                     </div>
-                    <div class="form-group">
-                      <select class="form-control form-control-user">
-                      <option value="0">Select Department</option>
-                      <option value="1">Engineering Service</option>
-                      <option value="2">Engineering Design & Evaluation</option>
-                      <option value="1">ICT</option>
-                      </select>
-                    </div>
                     <input type="hidden" name="source" value="browser">
                     <button type="submit" class="btn btn-primary btn-user btn-block">
                     <img src="<?php echo URL;?>public/images/spinner2.gif" style="display:none" width="20px" class="loader"> Login
 </button>
-                    <hr>
+                    
                   </form>
-                  
+                  <hr>
+                <div class="text-center">
+                  <a class="small" href="#">Forgot Password?</a>
+                </div>
+                <div class="text-center">
+                  <a class="small" href="{{dirlocation}}">I dont have an account yet!</a>
+                </div>
 
                 </div>
               </div>

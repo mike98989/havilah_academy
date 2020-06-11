@@ -4,13 +4,13 @@
     var siteUrl = window.location.pathname;
     var webUrl= siteUrl.split("/");
     //splice the url to fit in both on localhost and onine server
-    var i = webUrl.indexOf('fcda');
+    var i = webUrl.indexOf('havilah_academy');
     webUrl.splice(i, 1);
 
     //var dirlocation = window.location.hostname+'/nps/';
     //var dirlocation = window.location.hostname+'/';
     //var completeUrlLocation = 'https://'+window.location.hostname+'/';
-    var completeUrlLocation = 'http://'+window.location.hostname+'/fcda/';
+    var completeUrlLocation = 'http://'+window.location.hostname+'/havilah_academy/';
     //var completeUrlLocation = 'http://'+window.location.hostname+'/';
     //var current_user = $('#current_user_value').val();
 
